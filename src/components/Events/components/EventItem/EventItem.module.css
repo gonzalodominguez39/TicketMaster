@@ -1,0 +1,28 @@
+.eventItemContainer {
+  display: flex;
+  margin: 24px 0px;
+  align-items: center;
+}
+.eventItemInfo {
+  align-items: start;
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.eventName {
+  margin: 0;
+  font-size: 22px;
+}
+.eventInfo {
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.seeMoreButton {
+  margin-top: 5px;
+}
