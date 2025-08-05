@@ -26,3 +26,16 @@
 .seeMoreButton {
   margin-top: 5px;
 }
+.imageContainer{
+  position: relative;
+}
+.hearthLikeContainer{
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  cursor: pointer;
+
+}

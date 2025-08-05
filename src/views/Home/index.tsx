@@ -1,28 +1,30 @@
 import { useEffect, useState } from 'react'
 import { Navbar } from '../../components/Navbar'
 import { Events } from '../../components/Events'
-import { useEventsData } from '../../hooks/useEventsData'
 import ReactPaginate from 'react-paginate'
 import type { Page } from '../../types/event'
 import styles from './Home.module.css'
+import { useEventsResults } from '../../state/events.results'
 
 export const Home = () => {
   const [search, setSearch] = useState<string>('')
-  const { events, error, isLoading, fetchEvents, page } = useEventsData()
+  const { data, error, isLoading, fetchEvents } = useEventsResults()
+  const events = data?._embedded?.events || []
+  const page = data?.page || {}
   const [selectedPage, setSelectedPage] = useState('')
-  const [pageCount, setPageCount] = useState(0)
 
   const handleSearch = (term: string) => {
     setSearch(term)
   }
 
-
   useEffect(() => {
-    fetchEvents({ term:search || '',page: selectedPage||'' })
-  }, [search,selectedPage ])
+    fetchEvents({ term: search || '', page: selectedPage || '' })
+  }, [search, selectedPage])
 
   const renderEvents = () => {
-    if (error) return <p>Hubo un problema al cargar los eventos</p>
+    if (Object.keys(error || {}).length > 0)
+      return <p>Hubo un problema al cargar los eventos</p>
+    console.log()
     if (isLoading) return <p>Cargando..</p>
     if (!isLoading && events) {
       return (
