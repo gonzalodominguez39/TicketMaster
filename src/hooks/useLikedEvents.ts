@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from "react"
+import { LIKED_EVENTS_STORAGE_KEY } from "../utils/constants"
 
-const LIKED_EVENTS_STORAGE_KEY = 'likedEvents'
 
 const checkEventIsLike = (eventId: string) => {
   const likedEventsString = localStorage.getItem(LIKED_EVENTS_STORAGE_KEY)

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 type NavbarProps = {
   onSearch: (term: string) => void
@@ -27,6 +28,7 @@ export const Navbar = ({ onSearch }: NavbarProps) => {
         onChange={handleChangeSearch}
         onKeyDown={handleInputKeyDown}
         />
+        <Link to='/profile/my-info'style={{color:'white',marginLeft: '24px',textDecoration:'none'}} >Mi Perfil</Link>
         </section>
     </div>
   )
