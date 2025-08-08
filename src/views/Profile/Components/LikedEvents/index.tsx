@@ -43,5 +43,5 @@ export const LikedEvents = () => {
   if (isLoading) return <div>Cargando...</div>;
   if (!events) return <div>No hay eventos favoritos</div>;
   console.log(events);
-  return <div>{events.map((event: Event) => (<EventItem key={`liked-event-item-${event.id}`}event={event} onClickedSeeMore={()=>{handleEventClicked(event.id)}} ></EventItem>))}</div>;
+  return <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center", gap:"20px", marginTop:"20px"}} >{events.map((event: Event) => (<EventItem key={`liked-event-item-${event.id}`}event={event} onClickedSeeMore={()=>{handleEventClicked(event.id)}} ></EventItem>))}</div>;
 };
