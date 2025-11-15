@@ -24,7 +24,7 @@ export const Home = () => {
   const renderEvents = () => {
     if (Object.keys(error || {}).length > 0)
       return <p>Hubo un problema al cargar los eventos</p>
-    console.log()
+    console.log("datos:", data)
     if (isLoading) return <p>Cargando..</p>
     if (!isLoading && events) {
       return (
